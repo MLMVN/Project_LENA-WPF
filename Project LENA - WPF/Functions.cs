@@ -1,11 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Text;
 using System.Threading.Tasks;
 /* ---------------------- Added Libraries ---------------------- */
 using BitMiracle.LibTiff.Classic; // Use Tiff images
 using System.Threading; // PauseToken
+using ManagedCuda.BasicTypes; // CUDA Libraries
 
 namespace Project_LENA___WPF
 {
@@ -95,7 +96,7 @@ namespace Project_LENA___WPF
             int newWidth = width + (offset * 2);
             byte[,] image = new byte[newHeight, newWidth];
 
-            Window.SetText2("Calling MirrorImage... Done.\r\nSize of new matrix is " + newWidth + " by " + newHeight + Environment.NewLine);
+            Window.SetText2("Calling MirrorImage... Done.\r\nSize of new matrix is " + newWidth + " by " + newHeight + Environment.NewLine + Environment.NewLine);
             // copy original image
             for (int i = 0; i < height; i++)
             {
